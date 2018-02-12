@@ -20,7 +20,7 @@ public class GraphicsHandler {
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
 			@Override
 			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-				System.out.println("exiting");
+				System.out.println("Exiting.");
 				System.exit(0);
 			}
 		});
@@ -33,6 +33,7 @@ public class GraphicsHandler {
 		g2d.setColor(Color.BLACK);
 		g2d.fillRect(0, 0, 1920, 1080);
 		g2d.setColor(Color.WHITE);
+		g2d.drawImage(TextureHandler.getTexture("Test"), 100, 100, 100 + 100, 100 + 100, 0, 0, 32, 32, frame);
 		//switch (ControlHandler.mode) {
 		frame.getGraphics().drawImage(backbuffer, 0, 0, frame.getWidth(), frame.getHeight(), frame);
 	}

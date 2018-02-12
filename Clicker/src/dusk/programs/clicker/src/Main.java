@@ -1,6 +1,9 @@
 package dusk.programs.clicker.src;
 
+import dusk.programs.clicker.control.ControlHandler;
 import dusk.programs.clicker.graphics.GraphicsHandler;
+import dusk.programs.clicker.graphics.TextureHandler;
+import dusk.programs.clicker.graphics.TextureLoader;
 
 public class Main implements Runnable {
 	
@@ -12,10 +15,11 @@ public class Main implements Runnable {
 	}
 	
 	public Main() {
-		//TextureHandler.init();
-		//TileHandler.init();
+		TextureHandler.init();
+		TextureLoader.init();
 		GraphicsHandler.init();
-		//GraphicsHandler.frame.addKeyListener(new ControlHandler());
+		GraphicsHandler.frame.addKeyListener(new ControlHandler());
+		GraphicsHandler.frame.addMouseListener(new ControlHandler());
 		//MusicHandler.musicTester();
 		start();
 	}
