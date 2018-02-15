@@ -14,7 +14,7 @@ public class SaveHandler {
 			
 			while (line != null) {
 				sb.append(line);
-				line=br.readLine();
+				line = br.readLine();
 			}
 			saveData = sb.toString();
 		} catch (Exception e) {
