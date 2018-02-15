@@ -1,4 +1,4 @@
-package dusk.programs.clicker.graphics;
+package dusk.programs.clicker.filemanip;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

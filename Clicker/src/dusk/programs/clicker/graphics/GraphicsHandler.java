@@ -6,6 +6,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
+import dusk.programs.clicker.control.ControlHandler;
+
 
 public class GraphicsHandler {
 	
@@ -33,9 +35,24 @@ public class GraphicsHandler {
 		g2d.setColor(Color.BLACK);
 		g2d.fillRect(0, 0, 1920, 1080);
 		g2d.setColor(Color.WHITE);
-		g2d.drawImage(TextureHandler.getTexture("Test"), 100, 100, 100 + 100, 100 + 100, 0, 0, 32, 32, frame);
-		//switch (ControlHandler.mode) {
+		//g2d.drawImage(TextureHandler.getTexture("Test"), 100, 100, 100 + 100, 100 + 100, 0, 0, 32, 32, frame);
+		switch (ControlHandler.mode) {
+		case MainMenu:
+			doMenuGraphics();
+		case Playing:
+			doPlayingGraphics();
+		}
 		frame.getGraphics().drawImage(backbuffer, 0, 0, frame.getWidth(), frame.getHeight(), frame);
 	}
+	
+	public static void doMenuGraphics() {
+		g2d.drawString("Clicker game. Press enter to enter game.", 10, 80);
+		g2d.drawString("To load save data, press L", 10, 100);
+	}
+	
+	public static void doPlayingGraphics() {
+		
+	}
+	
 
 }

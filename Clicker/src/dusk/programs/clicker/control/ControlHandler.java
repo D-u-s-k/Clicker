@@ -5,6 +5,9 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import dusk.programs.clicker.filemanip.SaveHandler;
+import dusk.programs.clicker.src.Data;
+
 public class ControlHandler implements KeyListener, MouseListener {
 
 	public static enum Mode {
@@ -33,7 +36,6 @@ public class ControlHandler implements KeyListener, MouseListener {
 	}
 	
 	public static void doMenuMouseClicked(MouseEvent e) {
-		System.out.println("Mouse control functional.");
 	}
 
 	@Override
@@ -70,7 +72,11 @@ public class ControlHandler implements KeyListener, MouseListener {
 	}
 	
 	public static void doMenuKeyPressed(KeyEvent e) {
-		System.out.println("Keyboard control functional");
+		if (e.getKeyCode() == 10) {
+			mode = Mode.Playing;
+		} else if (e.getKeyCode() == KeyEvent.VK_L) {
+			Data.saveLoader(SaveHandler.saveData);
+		}
 	}
 
 	@Override
