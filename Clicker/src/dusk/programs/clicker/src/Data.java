@@ -9,6 +9,7 @@ public class Data {
 	public static void saveLoader(String saveData) {
 		if (saveData != null) {
 			//Decode Save Data Here
+			System.out.println(saveData);
 		} else {
 			//Error message
 		}
